@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Great Vibes', cursive;
+    background-color: #f5f0e8;
+    background-image: url('assets/background.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #2c2c2c;
+    text-align: center;
+  }
+  
+  .top-section {
+    padding: 40px 20px 20px 20px;
+  }
+  
+  /* Make skull bigger only on RSVP page */
+  .pirate-skull {
+    width: 200px; /* bigger to match other pages */
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .btn {
+    font-family: 'Maellen', cursive;
+    font-size: clamp(28px, 4vw, 56px);
+    text-decoration: none;
+    color: #2c2c2c;
+    position: relative;
+    padding: 0.3em 0;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .btn::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #2c2c2c;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .btn:hover { color: #000; }
+  .btn:hover::after { width: 100%; }
+  
+  /* RSVP Box */
+  .rsvp-box {
+    background: #ccbfb5;
+    max-width: 500px;
+    margin: 0 auto 80px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    font-family: 'Maellen', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .rsvp-box h1 {
+    font-size: clamp(32px, 5vw, 50px);
+    margin-bottom: 25px;
+  }
+  
+  .rsvp-box form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .rsvp-box input,
+  .rsvp-box textarea {
+    width: 90%;
+    max-width: 400px;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    font-family: Arial, sans-serif; /* normal font */
+    text-align: left; /* left align text */
+  }
+  
+  .rsvp-box textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .rsvp-box button {
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 20px;
+    background: #493d32;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .rsvp-box button:hover { background: #555; }
+  
+  #thankYou {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+  

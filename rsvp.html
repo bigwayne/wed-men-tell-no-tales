@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding of Saul & Itzi - RSVP</title>
+<link rel="stylesheet" href="rsvp.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Maellen';
+  src: url('fonts/Maellen-e9j06.otf') format('truetype');
+}
+</style>
+</head>
+<body>
+
+<!-- Pirate Skull and Buttons -->
+<div class="top-section">
+  <img src="assets/skull.png" alt="Pirate Skull" class="pirate-skull">
+  <div class="buttons">
+    <a href="dresscode.html" class="btn">Dress Code</a>
+    <a href="donations.html" class="btn">Donations</a>
+    <a href="#rsvp-section" class="btn">Rsvp</a>
+  </div>
+</div>
+
+<!-- RSVP Section -->
+<section id="rsvp-section">
+  <div class="rsvp-box">
+    <h1>Rsvp</h1>
+    <form id="rsvpForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="street" placeholder="Street Address" required>
+      <input type="text" name="city" placeholder="City" required>
+      <input type="text" name="state" placeholder="State" required>
+      <input type="text" name="zip" placeholder="Zip Code" required>
+      <input type="text" name="country" placeholder="Country" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <textarea name="message" placeholder="Message (optional)"></textarea>
+      <button type="submit">Submit RSVP</button>
+    </form>
+    <p id="thankYou">Thank you for your RSVP!</p>
+  </div>
+</section>
+
+<script>
+const form = document.getElementById('rsvpForm');
+const thankYou = document.getElementById('thankYou');
+thankYou.style.display = 'none';
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.style.display = 'none';
+  thankYou.style.display = 'block';
+});
+</script>
+
+</body>
+</html>

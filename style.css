@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Maellen', cursive;
+    height: 100%;
+  }
+  
+  /* Outer GIF background */
+  .background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  /* Content container */
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Inner background behind content */
+  .inner-background {
+    background: url('assets/background_scroll.png') no-repeat center center;
+    background-size: cover; /* or use 'contain' if you prefer */
+    padding: 40px;
+    border-radius: 15px;
+    z-index: 2;
+  }
+  
+  /* Pirate skull image */
+  .pirate-skull {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Buttons */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    display: block;
+    width: 220px;
+    text-align: center;
+    font-family: 'Maellen', cursive;
+    font-size: clamp(32px, 5vw, 60px);
+    text-decoration: none;
+    color: #2c2c2c;
+    position: relative;
+    padding: 0.3em 0;
+  }
+  
+  .btn::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #2c2c2c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .btn:hover::after { width: 100%; }
+  .btn:hover { color: #000; }
+  

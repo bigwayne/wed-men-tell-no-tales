@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donations</title>
+<style>
+@font-face { font-family: 'Maellen'; src: url('fonts/Maellen-e9j06.otf') format('truetype'); }
+body { margin:0; padding:0; font-family:'Maellen', cursive; background: url('assets/background.png') no-repeat center top; background-size:cover; background-attachment:fixed; color:#2c2c2c; text-align:center;}
+.container { max-width:900px; margin:0 auto; padding:80px 20px; }
+.buttons { display:flex; justify-content:center; gap:50px; margin-bottom:40px; }
+.btn { font-size:clamp(32px,5vw,60px); text-decoration:none; color:#2c2c2c; position:relative; padding:0.3em 0; display:inline-block; }
+.btn::after { content:''; display:block; width:0; height:3px; background:#2c2c2c; position:absolute; bottom:0; left:0; transition: width 0.3s ease; }
+.btn:hover::after { width:100%; }
+.btn:hover { color:#000; }
+.skull { width:100%; max-width:250px; height:auto; margin:0 auto 20px; display:block; }
+
+.donation-box {
+  display:flex; flex-direction:row; align-items:center; justify-content:space-between;
+  background:#ccbfb5; padding:40px; border-radius:15px; max-width:700px; margin:0 auto; gap:20px;
+}
+.donation-box img { max-width:250px; width:40%; border-radius:10px; }
+.donation-box .text { text-align:left; font-size:clamp(24px,4vw,40px); line-height:1.4; flex:1; }
+h2 { font-size:clamp(36px,5vw,50px); margin-bottom:40px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="assets/skull.png" alt="Skull" class="skull">
+  <div class="buttons">
+    <a href="index.html" class="btn">Home</a>
+    <a href="dresscode.html" class="btn">Dress Code</a>
+    <a href="rsvp.html" class="btn">Rsvp</a>
+  </div>
+  <div class="donation-box">
+    <div class="text">
+      There is no wedding registry but if you would like to contribute your precious booty to Saul & Itzi please use the options below. Any contributions are immensely appreciated.
+    </div>
+    <div class="images">
+      <img src="assets/pp.png" alt="Donation QR Code">
+      <img src="assets/d.png" alt="QR">
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
