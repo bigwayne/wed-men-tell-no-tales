@@ -1,81 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dress Code</title>
-<style>
-@font-face { font-family: 'Maellen'; src: url('fonts/Maellen-e9j06.otf') format('truetype'); }
-body {
-  margin:0; padding:0;
-  font-family:'Maellen', cursive;
-  background: url('assets/background_1.png') no-repeat center top;
-  background-size: cover;
-  background-attachment: scroll;
-  color:#2c2c2c; text-align:center;
-}
-.container { max-width:900px; margin:0 auto; padding:80px 20px; }
-h2,h3 { font-family:'Maellen', cursive; }
-h2 { font-size:clamp(40px,5vw,60px); margin-bottom:40px; }
-h3 { font-size:clamp(28px,4vw,36px); margin-left:20px; text-align:left; margin-bottom:20px;}
-.buttons { display:flex; justify-content:center; gap:50px; margin-bottom:40px; }
-.btn { font-size:clamp(28px,4vw,52px); text-decoration:none; color:#2c2c2c; position:relative; padding:0.3em 0; display:inline-block; }
-.btn::after { content:''; display:block; width:0; height:3px; background:#2c2c2c; position:absolute; bottom:0; left:0; transition: width 0.3s ease; }
-.btn:hover::after { width:100%; }
-.btn:hover { color:#000; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress Code</title>
+    <style>
+        @font-face {
+            font-family: 'Maellen';
+            src: url('fonts/Maellen-e9j06.otf') format('truetype');
+        }
 
-.skull { width:100%; max-width:250px; height:auto; margin:0 auto 20px; display:block; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Maellen', cursive;
+            background: url('assets/background_1.png') no-repeat center top;
+            background-size: cover;
+            background-attachment: scroll;
+            color: #2c2c2c;
+            text-align: center;
+        }
 
-.carousel-wrapper { position:relative; margin-bottom:60px; }
-.carousel-track { display:flex; overflow:hidden; scroll-behavior:smooth; }
-.carousel-track img { flex:0 0 calc(33.33% - 10px); margin-right:10px; border-radius:10px; max-height:250px; object-fit:cover; }
-@media(max-width:768px) { .carousel-track img { flex:0 0 calc(50% - 10px); max-height:180px; } }
-@media(max-width:480px) { .carousel-track img { flex:0 0 calc(80% - 10px); max-height:150px; } }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
 
-.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(50,50,55,0.8); color:#fff; border:none; padding:10px 15px; font-size:24px; cursor:pointer; border-radius:50%; z-index:10;}
-.carousel-btn:hover { background:rgba(50,50,55,1); }
-.carousel-btn.prev { left:-25px; } .carousel-btn.next { right:-25px; }
-</style>
+        h2,
+        h3 {
+            font-family: 'Maellen', cursive;
+        }
+
+        h2 {
+            font-size: clamp(40px, 5vw, 60px);
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font-size: clamp(28px, 4vw, 36px);
+            margin-left: 20px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            font-size: clamp(28px, 4vw, 52px);
+            text-decoration: none;
+            color: #2c2c2c;
+            position: relative;
+            padding: 0.3em 0;
+            display: inline-block;
+        }
+
+        .btn::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: #2c2c2c;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .btn:hover::after {
+            width: 100%;
+        }
+
+        .btn:hover {
+            color: #000;
+        }
+
+        .skull {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .carousel-track {
+            display: flex;
+            overflow: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .carousel-track img {
+            flex: 0 0 calc(33.33% - 10px);
+            margin-right: 10px;
+            border-radius: 10px;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        @media(max-width:768px) {
+            .carousel-track img {
+                flex: 0 0 calc(50% - 10px);
+                max-height: 180px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .carousel-track img {
+                flex: 0 0 calc(80% - 10px);
+                max-height: 150px;
+            }
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(50, 50, 55, 0.8);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(50, 50, 55, 1);
+        }
+
+        .carousel-btn.prev {
+            left: -25px;
+        }
+
+        .carousel-btn.next {
+            right: -25px;
+        }
+    </style>
+    <script src="scripts.js"></script>
 </head>
+
 <body>
-<div class="container">
-  <img src="assets/skull.png" alt="Skull" class="skull">
-  <div class="buttons">
-    <a href="index.html" class="btn">Home</a>
-    <a href="donations.html" class="btn">Donations</a>
-    <a href="rsvp.html" class="btn">Rsvp</a>
-  </div>
+    <div class="container">
+        <img src="assets/skull.png" alt="Skull" class="skull">
+        <div class="buttons">
+            <a href="index.html" class="btn">Home</a>
+            <a href="donations.html" class="btn">Donations</a>
+            <a href="rsvp.html" class="btn">Rsvp</a>
+        </div>
 
-  <div class="carousel-wrapper">
-    <h3>Wear</h3>
-    <button class="carousel-btn prev" data-target="carousel-wear">&#10094;</button>
-    <button class="carousel-btn next" data-target="carousel-wear">&#10095;</button>
-    <div class="carousel-track" id="carousel-wear">
-      <img src="assets/dresscode/wear/6abcdcdbb3aafaa7e5870605d67208bd.png">
-      <img src="assets/dresscode/wear/81KhuH2dVL._UY1000_.jpg">
-      <img src="assets/dresscode/wear/81UIPaqhnJL.png">
-    </div>
-  </div>
+        <div class="carousel-wrapper">
+            <h3>Wear</h3>
+            <button class="carousel-btn prev" data-target="carousel-wear">&#10094;</button>
+            <button class="carousel-btn next" data-target="carousel-wear">&#10095;</button>
+            <div class="carousel-track" id="carousel-wear">
+                <img src="assets/dresscode/wear/6abcdcdbb3aafaa7e5870605d67208bd.png">
+                <img src="assets/dresscode/wear/81KhuH2dVL._UY1000_.jpg">
+                <img src="assets/dresscode/wear/81UIPaqhnJL.png">
+            </div>
+        </div>
 
-  <div class="carousel-wrapper">
-    <h3>Don't Wear</h3>
-    <button class="carousel-btn prev" data-target="carousel-dontwear">&#10094;</button>
-    <button class="carousel-btn next" data-target="carousel-dontwear">&#10095;</button>
-    <div class="carousel-track" id="carousel-dontwear">
-      <img src="assets/dresscode/dontwear/71hHB3qA0NL.png">
-      <img src="assets/dresscode/dontwear/cheap.png">
-      <img src="assets/dresscode/dontwear/hate_stripes.png">
+        <div class="carousel-wrapper">
+            <h3>Don't Wear</h3>
+            <button class="carousel-btn prev" data-target="carousel-dontwear">&#10094;</button>
+            <button class="carousel-btn next" data-target="carousel-dontwear">&#10095;</button>
+            <div class="carousel-track" id="carousel-dontwear">
+                <img src="assets/dresscode/dontwear/71hHB3qA0NL.png">
+                <img src="assets/dresscode/dontwear/cheap.png">
+                <img src="assets/dresscode/dontwear/hate_stripes.png">
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<script>
-document.querySelectorAll('.carousel-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const track = document.getElementById(btn.dataset.target);
-    const imgWidth = track.querySelector('img').offsetWidth + 10;
-    track.scrollBy({ left: btn.classList.contains('next') ? imgWidth : -imgWidth, behavior:'smooth' });
-  });
-});
-</script>
 </body>
+
 </html>
