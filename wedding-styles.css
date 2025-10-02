@@ -497,9 +497,10 @@ body, html {
   }
 
   .btn-secondary {
-    border-top-width: clamp(40px, 5vw, 100px);
-    border-top-style: solid;
-    border-top-color: transparent;
+    border-top-width: clamp(2px, 0.2vw, 3px) !important;
+    border-top-style: solid !important;
+    border-top-color: #1a1a1a !important;
+    padding-top: 2px !important;
   }
 }
 
