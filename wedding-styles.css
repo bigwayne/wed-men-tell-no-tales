@@ -497,7 +497,9 @@ body, html {
   }
 
   .btn-secondary {
-    border-top: clamp(40px, 5vw, 100px) solid transparent;
+    border-top-width: clamp(40px, 5vw, 100px);
+    border-top-style: solid;
+    border-top-color: transparent;
   }
 }
 
@@ -545,7 +547,7 @@ body, html {
   border-radius: 15px;
   max-width: clamp(600px, 60vw, 900px);
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto clamp(40px, 5vw, 60px);
   padding: clamp(30px, 4vw, 60px) clamp(25px, 3.5vw, 50px);
   display: flex;
   flex-direction: column;
@@ -803,11 +805,35 @@ body, html {
   border-radius: 10px;
 }
 
+/* Mobile skull and namescroll for alternate pages - hidden by default */
+.mobile-skull,
+.mobile-namescroll {
+  display: none;
+}
+
 /* ===========================
    RESPONSIVE ADJUSTMENTS
    =========================== */
 
 @media (max-width: 768px) {
+  /* Show mobile skull on alternate pages */
+  .mobile-skull {
+    display: block;
+    width: 30%;
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto 5px;
+    padding-top: 15px;
+  }
+
+  /* Show mobile namescroll on alternate pages */
+  .mobile-namescroll {
+    display: block;
+    width: 60%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto 10px;
+  }
   .container {
     padding: 0 !important;
     padding-top: 5px !important;
@@ -818,7 +844,7 @@ body, html {
     transform-origin: center center;
     width: 99.5vw !important;
     max-width: 99.5vw !important;
-    padding: 8vw 4vw 8vw 4vw !important;
+    padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 40px) clamp(35px, 6vw, 55px) !important;
     background-size: 100% 100%;
     min-height: auto;
     gap: 0px;
@@ -851,6 +877,21 @@ body, html {
     padding-top: 40px;
   }
 
+  /* Move padding from buttons to skull on donations page only */
+  /* Use :has() to detect if page-title exists (donations page) */
+  .inner-background:has(.page-title) .mobile-skull {
+    padding-top: 70px !important;
+  }
+
+  .inner-background:has(.page-title) .buttons-secondary {
+    padding-top: 0 !important;
+  }
+
+  /* Match skull padding on dress code page - reduced padding */
+  .inner-background:has(.carousel-wrapper) .mobile-skull {
+    padding-top: 15px !important;
+  }
+
   .btn {
     font-size: 3.5vw !important;
     flex: 1 1 auto;
@@ -866,7 +907,7 @@ body, html {
   }
 
   .btn-secondary {
-    padding-top: clamp(30px, 10vw, 60px);
+    padding-top: 40px;
   }
 
 
@@ -932,7 +973,7 @@ body, html {
     padding: 18px 15px;
     max-width: 75%;
     border-width: 1px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     position: relative;
     left: 0;
     right: 0;
@@ -1034,7 +1075,7 @@ body, html {
   }
 
   .inner-background {
-    padding: 50px 25px 60px 25px;
+    padding: 35px 20px 40px 20px !important;
     background-size: 100% 100%;
     min-height: 100vh;
     gap: 12px;
@@ -1113,7 +1154,7 @@ body, html {
     padding: 12px 10px;
     max-width: 70%;
     border-width: 1px;
-    margin: 0 auto;
+    margin: 0 auto 25px;
     position: relative;
     left: 0;
     right: 0;

@@ -51,6 +51,17 @@
       // Force reflow to ensure styles are applied
       void content.offsetHeight;
 
+      // Force style recalculation on buttons
+      const buttons = content.querySelectorAll('.btn');
+      buttons.forEach(btn => {
+        // Force style recalculation
+        const computedStyle = window.getComputedStyle(btn);
+        void computedStyle.fontSize;
+        void computedStyle.padding;
+        // Force layout
+        void btn.offsetWidth;
+      });
+
       // Reinitialize page-specific functionality
       initPageFeatures();
 
