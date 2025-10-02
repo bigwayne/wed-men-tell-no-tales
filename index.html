@@ -1,25 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding of Saul & Itzi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+  <!-- Unified Stylesheet -->
+  <link rel="stylesheet" href="wedding-styles.css">
+
+  <style>
+    /* Smooth page transitions */
+    .inner-background {
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .inner-background.page-transitioning {
+      opacity: 0;
+    }
+  </style>
 </head>
 <body>
-  <!-- Outer GIF background -->
-  <img src="assets/background.gif" class="background-gif">
-
-  <!-- Content container with its own inner background -->
-  <div class="container">
-    <div class="inner-background">
-      <div class="buttons">
-        <a href="rsvp.html" class="btn">Rsvp</a>
-        <a href="dresscode.html" class="btn">Dress Code</a>
-        <a href="donations.html" class="btn">Donations</a>
+  <!-- Language Selector Popup -->
+  <div id="language-overlay" class="language-overlay">
+    <div class="language-popup">
+      <h2>Choose Your Language</h2>
+      <p>Elige Tu Idioma</p>
+      <div class="language-buttons">
+        <button class="language-btn" data-lang="en">English</button>
+        <button class="language-btn" data-lang="es">Español</button>
       </div>
     </div>
   </div>
+
+  <!-- Background audio - THIS NEVER RELOADS! -->
+  <audio id="background-audio" loop preload="auto">
+    <source src="assets/itzi.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Outer GIF background -->
+  <img src="assets/background.gif" class="background-gif" alt="Background GIF">
+
+  <!-- Fixed Circular Buttons -->
+  <div class="fixed-buttons-container">
+    <button id="music-control-btn">♫</button>
+    <a href="mailto:itzi.salty@gmail.com" id="questions-btn">?</a>
+  </div>
+
+  <!-- Content container - content swaps here -->
+  <div class="container">
+    <div class="inner-background" id="app-content">
+      <!-- Dynamic content loads here -->
+    </div>
+  </div>
+
+  <!-- Image Modal (for dress code page) -->
+  <div id="imageModal" class="image-modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <!-- ========================================
+       PAGE TEMPLATES (Hidden from view)
+       ======================================== -->
+
+  <!-- HOME PAGE TEMPLATE -->
+  <template id="page-index">
+    <img src="assets/skull.png" alt="Pirate Skull" class="pirate-skull">
+    <img src="assets/namescroll.png" alt="Names Scroll" class="namescroll">
+
+    <h2 class="summons" data-translate="summons">Ye be summoned to make merry</h2>
+
+    <div class="address-block">
+      <h2 class="address" data-translate="address1">The Doyle</h2>
+      <h2 class="address" data-translate="address2">418 W Mesquite Ave</h2>
+      <h2 class="address" data-translate="address3">Las Vegas, NV 89106</h2>
+    </div>
+
+    <div class="buttons">
+      <a href="rsvp.html" class="btn spa-link" data-translate="navRsvp">Rsvp</a>
+      <a href="dresscode.html" class="btn spa-link" data-translate="navDressCode">Dress Code</a>
+      <a href="donations.html" class="btn spa-link" data-translate="navDonations">Donations</a>
+    </div>
+
+    <div class="invite-images">
+      <img src="assets/date.png" alt="Date" class="date-img">
+      <img src="assets/ship.png" alt="Ship" class="ship-img" data-translate="shipImage">
+    </div>
+  </template>
+
+  <!-- RSVP PAGE TEMPLATE -->
+  <template id="page-rsvp">
+    <div class="buttons buttons-secondary">
+      <a href="index.html" class="btn btn-secondary spa-link" data-translate="navHome">Home</a>
+      <a href="dresscode.html" class="btn btn-secondary spa-link" data-translate="navDressCode">Dress Code</a>
+      <a href="donations.html" class="btn btn-secondary spa-link" data-translate="navDonations">Donations</a>
+    </div>
+
+    <p class="event-notice-outside" data-translate="eventNotice">This is a 21+ Event</p>
+    <p class="unable-to-attend" data-translate="unableToAttend">If you are unable to attend, please send us a message by clicking the ? button on the bottom right of the screen</p>
+
+    <section id="rsvp-section">
+      <div class="rsvp-box">
+        <h1 data-translate="rsvpTitle">RSVP</h1>
+        <form id="rsvpForm">
+          <input type="text" name="name" placeholder="Your Name" data-translate="namePlaceholder" required>
+          <input type="text" name="street" placeholder="Street Address" data-translate="streetPlaceholder" required>
+          <input type="text" name="city" placeholder="City" data-translate="cityPlaceholder" required>
+          <input type="text" name="state" placeholder="State" data-translate="statePlaceholder" required>
+          <input type="text" name="zip" placeholder="Zip Code" data-translate="zipPlaceholder" required>
+          <input type="text" name="country" placeholder="Country" data-translate="countryPlaceholder" required>
+          <input type="email" name="email" placeholder="Email Address" data-translate="emailPlaceholder" required>
+          <textarea name="message" placeholder="Message" data-translate="messagePlaceholder"></textarea>
+          <button type="submit" data-translate="submitBtn">Submit RSVP</button>
+        </form>
+        <p id="thankYou" data-translate="thankYou" style="display:none;">Thank you for your RSVP!</p>
+      </div>
+    </section>
+  </template>
+
+  <!-- DRESS CODE PAGE TEMPLATE -->
+  <template id="page-dresscode">
+    <div class="buttons">
+      <a href="index.html" class="btn btn-secondary spa-link" data-translate="navHome">Home</a>
+      <a href="rsvp.html" class="btn btn-secondary spa-link" data-translate="navRsvp">Rsvp</a>
+      <a href="donations.html" class="btn btn-secondary spa-link" data-translate="navDonations">Donations</a>
+    </div>
+
+    <div class="carousel-wrapper">
+      <h3 data-translate="wearTitle">Wear</h3>
+      <button class="carousel-btn prev" data-target="carousel-wear">&#10094;</button>
+      <button class="carousel-btn next" data-target="carousel-wear">&#10095;</button>
+      <div class="carousel-track" id="carousel-wear">
+        <img src="assets/dresscode/wear/2020-stehkragen-schnuerhemd-mit-aermelschnuerung-natur_6_3b3ce287-d4cb-4fb8-92ae-b3f9f7ee8c77.png" alt="Wear example">
+        <img src="assets/dresscode/wear/2161c01422afb16f53ca4978570f378e.jpg" alt="Wear example">
+        <img src="assets/dresscode/wear/6abcdcdbb3aafaa7e5870605d67208bd.png" alt="Wear example">
+        <img src="assets/dresscode/wear/81KhuH2dVL._UY1000_.jpg" alt="Wear example">
+        <img src="assets/dresscode/wear/81UIPaqhnJL.png" alt="Wear example">
+        <img src="assets/dresscode/wear/a077fc7a4702e09edf261fbb66d3544a.png" alt="Wear example">
+        <img src="assets/dresscode/wear/dressname_too_long.png" alt="Wear example">
+        <img src="assets/dresscode/wear/pirate-Corset-2.png" alt="Wear example">
+      </div>
+    </div>
+
+    <div class="carousel-wrapper">
+      <h3 data-translate="dontWearTitle">Don't Wear</h3>
+      <button class="carousel-btn prev" data-target="carousel-dontwear">&#10094;</button>
+      <button class="carousel-btn next" data-target="carousel-dontwear">&#10095;</button>
+      <div class="carousel-track" id="carousel-dontwear">
+        <img src="assets/dresscode/dontwear/71hHB3qA0NL.png" alt="Don't wear example">
+        <img src="assets/dresscode/dontwear/cheap.png" alt="Don't wear example">
+        <img src="assets/dresscode/dontwear/hate_stripes.png" alt="Don't wear example">
+        <img src="assets/dresscode/dontwear/ml76027-pirate-captain-men-halloween-costumes.png" alt="Don't wear example">
+        <img src="assets/dresscode/dontwear/pirate-shirt-mens.png" alt="Don't wear example">
+      </div>
+    </div>
+  </template>
+
+  <!-- DONATIONS PAGE TEMPLATE -->
+  <template id="page-donations">
+    <div class="buttons buttons-secondary">
+      <a href="index.html" class="btn btn-secondary spa-link" data-translate="navHome">Home</a>
+      <a href="dresscode.html" class="btn btn-secondary spa-link" data-translate="navDressCode">Dress Code</a>
+      <a href="rsvp.html" class="btn btn-secondary spa-link" data-translate="navRsvp">Rsvp</a>
+    </div>
+
+    <h2 class="page-title" data-translate="donationsTitle">Donations</h2>
+
+    <div class="donation-text" data-translate="donationsText">
+      There is no wedding registry, but if you would like to contribute your precious booty to Saul & Itzi, please use the options below. Any contributions are immensely appreciated.
+    </div>
+
+    <div class="qr-chest-row">
+      <div class="qr-stack">
+        <img src="assets/pp.png" alt="PayPal QR Code">
+        <img src="assets/d.png" alt="Other QR Code">
+      </div>
+
+      <img src="assets/chest.png" alt="Treasure Chest" class="chest-img">
+    </div>
+  </template>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Core scripts -->
+  <script src="language.js"></script>
+  <script src="scripts.js"></script>
+  <script src="spa-app.js"></script>
 </body>
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+<!-- Unified Stylesheet -->
+<link rel="stylesheet" href="wedding-styles.css">
+</head>
+
+<body>
+  <!-- Language Selector Popup -->
+  <div id="language-overlay" class="language-overlay hidden" style="display: none;">
+    <div class="language-popup">
+      <h2>Choose Your Language</h2>
+      <p>Elige Tu Idioma</p>
+      <div class="language-buttons">
+        <button class="language-btn" data-lang="en">English</button>
+        <button class="language-btn" data-lang="es">Español</button>
+      </div>
+    </div>
+  </div>
+  <!-- Background audio -->
+  <audio id="background-audio" loop preload="auto">
+    <source src="assets/itzi.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Background GIF -->
+  <img src="assets/background.gif" class="background-gif" alt="Background GIF">
+
+  <!-- Fixed Circular Buttons -->
+  <div class="fixed-buttons-container">
+    <button id="music-control-btn">♫</button>
+    <a href="mailto:itzi.salty@gmail.com" id="questions-btn">?</a>
+  </div>
+
+  <div class="container">
+    <div class="inner-background">
+      <!-- Buttons -->
+      <div class="buttons">
+        <a href="index.html" class="btn" data-translate="navHome">Home</a>
+        <a href="dresscode.html" class="btn" data-translate="navDressCode">Dress Code</a>
+        <a href="rsvp.html" class="btn" data-translate="navRsvp">Rsvp</a>
+      </div>
+
+
+      <h2 class="page-title" data-translate="donationsTitle">Donations</h2>
+
+      <!-- Donation text -->
+      <div class="donation-text" data-translate="donationsText">
+        There is no wedding registry, but if you would like to contribute your precious booty to Saul & Itzi, please use the options below. Any contributions are immensely appreciated.
+      </div>
+
+      <!-- Chest + QR codes -->
+      <div class="qr-chest-row">
+        <img src="assets/chest.png" alt="Treasure Chest" class="chest-img">
+
+        <div class="qr-stack">
+          <img src="assets/pp.png" alt="PayPal QR Code">
+          <img src="assets/d.png" alt="Other QR Code">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="language.js"></script>
+</body>
+</html>

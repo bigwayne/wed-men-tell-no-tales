@@ -2,52 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding of Saul & Itzi - RSVP</title>
-    <link rel="stylesheet" href="rsvp.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=UnifrakturCook:wght@700&display=swap"
-        rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: 'Maellen';
-            src: url('fonts/Maellen-e9j06.otf') format('truetype');
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script src="scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding of Saul & Itzi - RSVP</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+  <!-- Unified Stylesheet -->
+  <link rel="stylesheet" href="wedding-styles.css">
 </head>
 
 <body>
-
-    <!-- Pirate Skull and Buttons -->
-    <div class="top-section">
-        <img src="assets/skull.png" alt="Pirate Skull" class="pirate-skull">
-        <div class="buttons">
-            <a href="dresscode.html" class="btn">Dress Code</a>
-            <a href="donations.html" class="btn">Donations</a>
-            <a href="#rsvp-section" class="btn">Rsvp</a>
-        </div>
+  <!-- Language Selector Popup -->
+  <div id="language-overlay" class="language-overlay hidden" style="display: none;">
+    <div class="language-popup">
+      <h2>Choose Your Language</h2>
+      <p>Elige Tu Idioma</p>
+      <div class="language-buttons">
+        <button class="language-btn" data-lang="en">English</button>
+        <button class="language-btn" data-lang="es">Español</button>
+      </div>
     </div>
+  </div>
+  <!-- Background audio -->
+  <audio id="background-audio" loop preload="auto">
+    <source src="assets/itzi.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    <!-- RSVP Section -->
-    <section id="rsvp-section">
+  <!-- Background GIF -->
+  <img src="assets/background.gif" class="background-gif" alt="Background GIF">
+
+  <!-- Fixed Circular Buttons -->
+  <div class="fixed-buttons-container">
+    <button id="music-control-btn">♫</button>
+    <a href="mailto:itzi.salty@gmail.com" id="questions-btn">?</a>
+  </div>
+
+  <div class="container">
+    <div class="inner-background">
+      <!-- Buttons -->
+      <div class="buttons">
+        <a href="index.html" class="btn" data-translate="navHome">Home</a>
+        <a href="dresscode.html" class="btn" data-translate="navDressCode">Dress Code</a>
+        <a href="donations.html" class="btn" data-translate="navDonations">Donations</a>
+      </div>
+
+      <!-- 21+ Notice -->
+      <p class="event-notice-outside" data-translate="eventNotice">This is a 21+ Event</p>
+      <p class="unable-to-attend" data-translate="unableToAttend">If you are unable to attend, please send us a message</p>
+
+      <!-- RSVP Box -->
+      <section id="rsvp-section">
         <div class="rsvp-box">
-            <h1>Rsvp</h1>
-            <form id="rsvpForm">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="text" name="street" placeholder="Street Address" required>
-                <input type="text" name="city" placeholder="City" required>
-                <input type="text" name="state" placeholder="State" required>
-                <input type="text" name="zip" placeholder="Zip Code" required>
-                <input type="text" name="country" placeholder="Country" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <textarea name="message" placeholder="Message (optional)"></textarea>
-                <button type="submit">Submit RSVP</button>
-            </form>
-            <p id="thankYou">Thank you for your RSVP!</p>
+          <h1 data-translate="rsvpTitle">RSVP</h1>
+          <form id="rsvpForm">
+            <input type="text" name="name" placeholder="Your Name" data-translate="namePlaceholder" required>
+            <input type="text" name="street" placeholder="Street Address" data-translate="streetPlaceholder" required>
+            <input type="text" name="city" placeholder="City" data-translate="cityPlaceholder" required>
+            <input type="text" name="state" placeholder="State" data-translate="statePlaceholder" required>
+            <input type="text" name="zip" placeholder="Zip Code" data-translate="zipPlaceholder" required>
+            <input type="text" name="country" placeholder="Country" data-translate="countryPlaceholder" required>
+            <input type="email" name="email" placeholder="Email Address" data-translate="emailPlaceholder" required>
+            <textarea name="message" placeholder="Message" data-translate="messagePlaceholder"></textarea>
+            <button type="submit" data-translate="submitBtn">Submit RSVP</button>
+          </form>
+          <p id="thankYou" data-translate="thankYou">Thank you for your RSVP!</p>
         </div>
-    </section>
-</body>
+      </section>
+    </div>
+  </div>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="language.js"></script>
+  <script src="scripts.js"></script>
+</body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+  <!-- Unified Stylesheet -->
+  <link rel="stylesheet" href="wedding-styles.css">
+</head>
+<body>
+  <!-- Language Selector Popup -->
+  <div id="language-overlay" class="language-overlay">
+    <div class="language-popup">
+      <h2>Choose Your Language</h2>
+      <p>Elige Tu Idioma</p>
+      <div class="language-buttons">
+        <button class="language-btn" data-lang="en">English</button>
+        <button class="language-btn" data-lang="es">Español</button>
+      </div>
+    </div>
+  </div>
+  <!-- Background audio -->
+  <audio id="background-audio" loop preload="auto">
+    <source src="assets/itzi.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Outer GIF background -->
+  <img src="assets/background.gif" class="background-gif" alt="Background GIF">
+
+  <!-- Fixed Circular Buttons -->
+  <div class="fixed-buttons-container">
+    <button id="music-control-btn">♫</button>
+    <a href="mailto:itzi.salty@gmail.com" id="questions-btn">?</a>
+  </div>
+
+  <!-- Content container -->
+  <div class="container">
+    <div class="inner-background">
+      
+      <!-- Skull image -->
+      <img src="assets/skull.png" alt="Pirate Skull" class="pirate-skull">
+
+      <!-- Namescroll image -->
+      <img src="assets/namescroll.png" alt="Names Scroll" class="namescroll">
+
+      <!-- Invitation text -->
+      <div class="invite-text">
+        <h2 class="summons" data-translate="summons">Ye be summoned to make merry</h2>
+        <h2 class="address" data-translate="address1">The Doyle</h2>
+        <h2 class="address" data-translate="address2">418 W Mesquite Ave</h2>
+        <h2 class="address" data-translate="address3">Las Vegas, NV 89106</h2>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <a href="rsvp.html" class="btn" data-translate="navRsvp">Rsvp</a>
+        <a href="dresscode.html" class="btn" data-translate="navDressCode">Dress Code</a>
+        <a href="donations.html" class="btn" data-translate="navDonations">Donations</a>
+      </div>
+
+      <!-- Date and ship row -->
+      <div class="invite-images">
+        <img src="assets/date.png" alt="Date" class="date-img">
+        <img src="assets/ship.png" alt="Ship" class="ship-img" data-translate="shipImage">
+      </div>
+
+    </div>
+  </div>
+
+  <script src="language.js"></script>
+</body>
+</html>

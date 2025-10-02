@@ -1,81 +1,213 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-family: 'Maellen', cursive;
-    height: 100%;
-  }
-  
-  /* Outer GIF background */
-  .background-gif {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-  
-  /* Content container */
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Inner background behind content */
-  .inner-background {
-    background: url('assets/background_scroll.png') no-repeat center center;
-    background-size: cover; /* or use 'contain' if you prefer */
-    padding: 40px;
-    border-radius: 15px;
-    z-index: 2;
-  }
-  
-  /* Pirate skull image */
-  .pirate-skull {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  /* Buttons */
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .btn {
-    display: block;
-    width: 220px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Grenze Gotisch', serif;
+  min-height: 100vh;
+  color: #2c2c2c;
+}
+
+/* Outer GIF background */
+.background-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Container & inner background */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.inner-background {
+  background: url('assets/background_scroll.png') no-repeat center top;
+  background-size: 100% auto;
+  padding: 60px 40px;
+  border-radius: 15px;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  max-width: 860px;
+  min-width: 860px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Skull and namescroll */
+.pirate-skull {
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 40px auto 20px;
+}
+
+.namescroll {
+  width: 70%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+  /* Summons text using IM Fell English SC */
+  .summons {
+    font-family: 'IM Fell English SC', serif;
+    font-weight: 400;                 /* match address weight */
+    color: #2c2c2c;                   /* same color as address */
+    font-size: clamp(24px, 5vw, 48px); /* dynamically scales with viewport width */
     text-align: center;
-    font-family: 'Maellen', cursive;
-    font-size: clamp(32px, 5vw, 60px);
-    text-decoration: none;
-    color: #2c2c2c;
-    position: relative;
-    padding: 0.3em 0;
+    margin: 20px auto;
+    white-space: nowrap;              /* prevent wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;          /* optional if it overflows */
+}
+
+
+/* Address text using IM Fell English SC */
+.address {
+  font-family: 'IM Fell English SC', serif;
+  font-size: clamp(18px, 2.5vw, 32px);
+  margin: 5px 0;
+  color: #2c2c2c;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  min-width: 140px;
+  padding: 0.4em 1.2em;
+  font-family: 'Grenze Gotisch', serif;
+  font-size: calc(0.8rem + 0.8vw);
+  color: #1f1f1f;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;       /* transparent button */
+  border: 2px solid #1f1f1f;     /* black outline */
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4); /* subtle drop shadow */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.btn:hover {
+  color: #000;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+  transform: translateY(-1px);
+}
+
+/* Underline effect like ink line */
+.btn::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #1f1f1f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.btn:hover::after {
+  width: 100%;
+}
+
+
+
+
+/* Invite images row */
+.invite-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.date-img {
+  width: 25%;
+  max-width: 180px;
+  height: auto;
+}
+
+.ship-img {
+  width: 45%;
+  max-width: 380px;
+  height: auto;
+  margin-left: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .container {
+    padding: 10px;
+    overflow-x: auto;
   }
-  
-  .btn::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 3px;
-    background: #2c2c2c;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease;
+  .inner-background {
+    min-width: 860px;
   }
-  
-  .btn:hover::after { width: 100%; }
-  .btn:hover { color: #000; }
-  
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .inner-background {
+    padding: 40px 30px;
+    min-width: 860px;
+  }
+  .pirate-skull {
+    width: 60%;
+  }
+  .namescroll {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .summons {
+    font-size: clamp(20px, 6vw, 36px);
+    white-space: normal;
+  }
+  .address { font-size: clamp(14px, 4vw, 24px); }
+  .inner-background {
+    padding: 30px 20px;
+    min-width: 860px;
+  }
+  .invite-images {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .date-img, .ship-img {
+    width: 60%;
+    max-width: none;
+    margin-left: 0;
+  }
+  .buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

@@ -40,4 +40,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Image modal (for dresscode.html)
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+
+    if (modal && modalImg) {
+        // Add click to all carousel images
+        document.querySelectorAll('.carousel-track img').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.classList.add('active');
+                modalImg.src = img.src;
+            });
+        });
+
+        // Close modal on X button
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+        }
+
+        // Close modal on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
 });

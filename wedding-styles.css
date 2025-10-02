@@ -1,0 +1,1222 @@
+/* ===========================
+   COMPLETE WEDDING SITE STYLES
+   ALL PAGES - UNIFORM SIZING
+   =========================== */
+
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Grenze Gotisch', serif;
+  min-height: 100vh;
+  color: #1a1a1a;
+}
+
+/* ===========================
+   LANGUAGE SELECTOR POPUP
+   =========================== */
+
+.language-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.language-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.language-popup {
+  background: #f4e8d0;
+  border: 4px solid #8b7500;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7),
+              inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  padding: 60px 50px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.language-popup h2 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  color: #0a0a0a;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+
+.language-popup p {
+  font-family: 'Grenze Gotisch', serif;
+  font-size: clamp(18px, 3vw, 24px);
+  color: #1a1a1a;
+  margin: 0 0 40px 0;
+  line-height: 1.4;
+}
+
+.language-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.language-btn {
+  font-family: 'IM Fell English SC', serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  padding: 15px 40px;
+  background: linear-gradient(180deg, #c9a961 0%, #b8941f 100%);
+  color: #0a0a0a;
+  border: 3px solid #6b5a0f;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(139, 117, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.language-btn:hover {
+  background: linear-gradient(180deg, #d4b068 0%, #c9a235 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 117, 0, 0.6);
+}
+
+@media (max-width: 600px) {
+  .language-popup {
+    padding: 40px 30px;
+  }
+
+  .language-popup h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .language-popup p {
+    font-size: clamp(16px, 4vw, 20px);
+    margin-bottom: 30px;
+  }
+
+  .language-btn {
+    font-size: clamp(18px, 4.5vw, 26px);
+    padding: 12px 30px;
+  }
+}
+
+/* Fixed GIF Background */
+.background-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Container - SAME ON ALL PAGES */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 40px);
+  padding-top: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Inner Background - FULLY RESPONSIVE ON ALL PAGES */
+.inner-background {
+  background: url('assets/background_scroll.png') no-repeat center center;
+  background-size: 100% 100%;
+  padding: clamp(60px, 8vw, 100px) clamp(60px, 8vw, 120px) clamp(70px, 10vw, 130px);
+  border-radius: 15px;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  max-width: clamp(900px, 90vw, 1600px);
+  min-height: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.2vw, 18px);
+  box-sizing: border-box;
+  transform: scale(0.8);
+  transform-origin: center center;
+}
+
+/* Navigation Buttons - FULLY RESPONSIVE ON ALL PAGES */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 25px);
+  margin: clamp(15px, 2.5vw, 30px) 0 0 0;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 90%;
+  flex-shrink: 0;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  flex: 1 1 0;
+  min-width: clamp(100px, 15vw, 160px);
+  max-width: 100%;
+  padding: clamp(0.5em, 0.6vw, 0.7em) clamp(1em, 1.5vw, 1.8em);
+  font-family: 'Grenze Gotisch', serif;
+  font-size: clamp(24px, 2.5vw, 50px);
+  color: #1a1a1a;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  border: clamp(2px, 0.2vw, 3px) solid #1a1a1a;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn:hover {
+  color: #000;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+  transform: translateY(-1px);
+}
+
+.btn::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #1a1a1a;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.btn:hover::after {
+  width: 100%;
+}
+
+/* Fixed Gold Circular Buttons Container */
+.fixed-buttons-container {
+  position: fixed;
+  bottom: clamp(15px, 2vw, 25px);
+  right: clamp(15px, 2vw, 25px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vw, 18px);
+  z-index: 1000;
+}
+
+/* Fixed Gold Questions Button */
+#questions-btn {
+  width: clamp(50px, 5vw, 70px);
+  height: clamp(50px, 5vw, 70px);
+  min-width: clamp(50px, 5vw, 70px);
+  min-height: clamp(50px, 5vw, 70px);
+  padding: 0;
+  font-size: clamp(22px, 2.5vw, 32px);
+  cursor: pointer;
+  background: radial-gradient(circle at 30% 30%, #d4b068, #b8941f);
+  color: #1a1a1a;
+  border: 2px solid #6b5a0f;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  font-family: 'Grenze Gotisch', serif;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+#questions-btn:hover {
+  background: radial-gradient(circle at 30% 30%, #ddb84a, #c9a235);
+  transform: scale(1.05);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+}
+
+/* Music Control Button (index.html only) */
+#music-control-btn {
+  width: clamp(50px, 5vw, 70px);
+  height: clamp(50px, 5vw, 70px);
+  min-width: clamp(50px, 5vw, 70px);
+  min-height: clamp(50px, 5vw, 70px);
+  padding: 0;
+  font-size: clamp(22px, 2.5vw, 32px);
+  cursor: pointer;
+  background: radial-gradient(circle at 30% 30%, #d4b068, #b8941f);
+  color: #1a1a1a;
+  border: 2px solid #6b5a0f;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  font-family: 'Grenze Gotisch', serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+#music-control-btn:hover {
+  background: radial-gradient(circle at 30% 30%, #ddb84a, #c9a235);
+  transform: scale(1.05);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+}
+
+/* ===========================
+   INDEX PAGE STYLES
+   =========================== */
+
+.pirate-skull {
+  width: clamp(40%, 45vw, 50%);
+  max-width: clamp(250px, 20vw, 400px);
+  height: auto;
+  display: block;
+  margin: clamp(20px, 2.5vw, 30px) auto clamp(15px, 2vw, 25px);
+  flex-shrink: 0;
+}
+
+.namescroll {
+  width: clamp(70%, 75vw, 85%);
+  max-width: clamp(600px, 50vw, 900px);
+  height: auto;
+  display: block;
+  margin: 0 auto clamp(15px, 2vw, 25px);
+  flex-shrink: 0;
+}
+
+.summons {
+  font-family: 'IM Fell English SC', serif;
+  font-weight: 400;
+  color: #1a1a1a;
+  font-size: clamp(32px, 4vw, 66px);
+  text-align: center;
+  margin: 0px auto clamp(20px, 2.5vw, 35px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.address {
+  font-family: 'IM Fell English SC', serif;
+  font-size: clamp(24px, 3vw, 52px);
+  margin: clamp(4px, 0.5vw, 8px) 0;
+  color: #0a0a0a;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+@keyframes goldGlow {
+  0%, 38% {
+    color: #0a0a0a;
+    text-shadow: none;
+  }
+  50% {
+    color: #2a2010;
+    text-shadow: 0 0 8px rgba(218, 165, 32, 0.4),
+                 0 0 15px rgba(184, 134, 11, 0.3);
+  }
+  62% {
+    color: #3d2a12;
+    text-shadow: 0 0 5px rgba(218, 165, 32, 0.5),
+                 0 0 12px rgba(184, 134, 11, 0.4),
+                 0 0 20px rgba(218, 165, 32, 0.3);
+  }
+  74% {
+    color: #4a3518;
+    text-shadow: 0 0 3px rgba(218, 165, 32, 0.6),
+                 0 0 8px rgba(184, 134, 11, 0.5),
+                 0 0 15px rgba(218, 165, 32, 0.4),
+                 0 0 25px rgba(184, 134, 11, 0.3);
+  }
+  86% {
+    color: #3d2a12;
+    text-shadow: 0 0 5px rgba(218, 165, 32, 0.5),
+                 0 0 12px rgba(184, 134, 11, 0.4),
+                 0 0 20px rgba(218, 165, 32, 0.3);
+  }
+  94% {
+    color: #2a2010;
+    text-shadow: 0 0 8px rgba(218, 165, 32, 0.4),
+                 0 0 15px rgba(184, 134, 11, 0.3);
+  }
+  100% {
+    color: #0a0a0a;
+    text-shadow: none;
+  }
+}
+
+@keyframes goldGlowIntense {
+  0%, 38% {
+    color: #0a0a0a;
+    text-shadow: none;
+  }
+  50% {
+    color: #2a2010;
+    text-shadow: 0 0 6px rgba(218, 165, 32, 0.5),
+                 0 0 12px rgba(184, 134, 11, 0.4);
+  }
+  62% {
+    color: #3d2a12;
+    text-shadow: 0 0 4px rgba(218, 165, 32, 0.6),
+                 0 0 10px rgba(184, 134, 11, 0.5),
+                 0 0 18px rgba(218, 165, 32, 0.4);
+  }
+  74% {
+    color: #4a3518;
+    text-shadow: 0 0 2px rgba(218, 165, 32, 0.7),
+                 0 0 6px rgba(184, 134, 11, 0.6),
+                 0 0 12px rgba(218, 165, 32, 0.5),
+                 0 0 20px rgba(184, 134, 11, 0.4);
+  }
+  86% {
+    color: #3d2a12;
+    text-shadow: 0 0 4px rgba(218, 165, 32, 0.6),
+                 0 0 10px rgba(184, 134, 11, 0.5),
+                 0 0 18px rgba(218, 165, 32, 0.4);
+  }
+  94% {
+    color: #2a2010;
+    text-shadow: 0 0 6px rgba(218, 165, 32, 0.5),
+                 0 0 12px rgba(184, 134, 11, 0.4);
+  }
+  100% {
+    color: #0a0a0a;
+    text-shadow: none;
+  }
+}
+
+@keyframes imageGoldGlow {
+  0%, 38% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.4))
+            drop-shadow(0 0 40px rgba(184, 134, 11, 0.3));
+  }
+  62% {
+    filter: drop-shadow(0 0 18px rgba(218, 165, 32, 0.5))
+            drop-shadow(0 0 35px rgba(184, 134, 11, 0.4))
+            drop-shadow(0 0 55px rgba(218, 165, 32, 0.3));
+  }
+  74% {
+    filter: drop-shadow(0 0 15px rgba(218, 165, 32, 0.6))
+            drop-shadow(0 0 30px rgba(184, 134, 11, 0.5))
+            drop-shadow(0 0 50px rgba(218, 165, 32, 0.4))
+            drop-shadow(0 0 75px rgba(184, 134, 11, 0.3));
+  }
+  86% {
+    filter: drop-shadow(0 0 18px rgba(218, 165, 32, 0.5))
+            drop-shadow(0 0 35px rgba(184, 134, 11, 0.4))
+            drop-shadow(0 0 55px rgba(218, 165, 32, 0.3));
+  }
+  94% {
+    filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.4))
+            drop-shadow(0 0 40px rgba(184, 134, 11, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+.invite-text {
+  margin: clamp(20px, 2.5vw, 35px) 0 clamp(25px, 3vw, 45px) 0;
+  flex-shrink: 0;
+}
+
+.invite-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(30px, 5vw, 80px);
+  margin: clamp(15px, 2vw, 25px) 0 0 0;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.date-img {
+  width: clamp(20%, 22vw, 28%);
+  max-width: clamp(180px, 18vw, 320px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.ship-img {
+  width: clamp(38%, 42vw, 50%);
+  max-width: clamp(350px, 35vw, 600px);
+  height: auto;
+  flex-shrink: 0;
+  margin-left: clamp(0px, 5vw, 80px);
+}
+
+/* Desktop only - spread ship and date to edges */
+@media (min-width: 769px) {
+  .invite-images {
+    justify-content: space-between;
+    padding: 0 clamp(40px, 5vw, 100px);
+    gap: clamp(80px, 10vw, 200px);
+    flex-wrap: nowrap;
+  }
+
+  .date-img {
+    width: clamp(25%, 28vw, 32%);
+    max-width: clamp(220px, 22vw, 380px);
+  }
+
+  .ship-img {
+    width: clamp(42%, 48vw, 55%);
+    max-width: clamp(400px, 40vw, 700px);
+  }
+
+  .btn-secondary {
+    border-top: 2em solid transparent;
+  }
+}
+
+/* ===========================
+   RSVP PAGE STYLES
+   =========================== */
+
+#rsvp-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+}
+
+.event-notice-outside {
+  font-family: 'Grenze Gotisch', serif;
+  font-size: clamp(28px, 3.5vw, 52px);
+  margin: clamp(10px, 1.5vw, 20px) 0;
+  color: #1a1a1a;
+  font-weight: 600;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.unable-to-attend {
+  font-family: 'Grenze Gotisch', serif;
+  font-size: clamp(16px, 2vw, 32px);
+  margin: clamp(8px, 1vw, 12px) 0 clamp(10px, 1.5vw, 18px) 0;
+  color: #1a1a1a;
+  font-weight: 400;
+  text-align: center;
+  flex-shrink: 0;
+  max-width: 90%;
+  line-height: 1.3;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.rsvp-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: clamp(2px, 0.25vw, 3px) solid #1a1a1a;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  border-radius: 15px;
+  max-width: clamp(600px, 60vw, 900px);
+  width: 90%;
+  margin: 0 auto;
+  padding: clamp(30px, 4vw, 60px) clamp(25px, 3.5vw, 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'IM Fell English SC', serif;
+  color: #1a1a1a;
+  text-align: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.rsvp-box h1 {
+  font-size: clamp(32px, 4.5vw, 60px);
+  margin-bottom: clamp(15px, 2vw, 30px);
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.rsvp-box form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.5vw, 18px);
+}
+
+.rsvp-box input,
+.rsvp-box textarea {
+  width: 95%;
+  max-width: clamp(450px, 50vw, 700px);
+  padding: clamp(15px, 1.8vw, 24px) clamp(18px, 2vw, 26px);
+  font-size: clamp(18px, 2vw, 28px);
+  border-radius: 10px;
+  border: clamp(2px, 0.25vw, 3px) solid #1a1a1a;
+  font-family: 'Grenze Gotisch', serif;
+  color: #1a1a1a;
+  background: transparent;
+  font-weight: 500;
+}
+
+/* Fix autofill styling */
+.rsvp-box input:-webkit-autofill,
+.rsvp-box input:-webkit-autofill:hover,
+.rsvp-box input:-webkit-autofill:focus,
+.rsvp-box textarea:-webkit-autofill,
+.rsvp-box textarea:-webkit-autofill:hover,
+.rsvp-box textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1a1a1a;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: none;
+}
+
+.rsvp-box input::placeholder,
+.rsvp-box textarea::placeholder {
+  color: #1a1a1a;
+  opacity: 0.8;
+}
+
+.rsvp-box textarea {
+  resize: vertical;
+  min-height: clamp(60px, 8vw, 100px);
+}
+
+.rsvp-box button {
+  margin-top: clamp(10px, 1.5vw, 20px);
+  padding: clamp(0.5em, 0.7vw, 0.8em) clamp(1.2em, 1.8vw, 2em);
+  font-size: clamp(20px, 2.5vw, 34px);
+  font-family: 'Grenze Gotisch', serif;
+  color: #1a1a1a;
+  background: transparent;
+  border: clamp(2px, 0.25vw, 3px) solid #1a1a1a;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.rsvp-box button:hover {
+  color: #000;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+  transform: translateY(-1px);
+}
+
+#thankYou {
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: center;
+  display: none;
+}
+
+/* ===========================
+   DRESS CODE PAGE STYLES
+   =========================== */
+
+.carousel-wrapper {
+  position: relative;
+  margin: clamp(8px, 1vw, 15px) auto;
+  max-width: clamp(60%, 70vw, 80%);
+  width: 100%;
+  overflow: hidden;
+  padding: 0 clamp(25px, 3vw, 50px) clamp(8px, 1vw, 15px);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  flex-shrink: 0;
+}
+
+.carousel-wrapper h3 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: clamp(32px, 4.5vw, 64px);
+  margin: clamp(8px, 1vw, 15px) 0 clamp(12px, 1.5vw, 20px);
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: clamp(8px, 1vw, 15px);
+  padding-bottom: clamp(8px, 1vw, 15px);
+}
+
+.carousel-track img {
+  flex: 0 0 auto;
+  width: clamp(120px, 12vw, 180px);
+  height: clamp(140px, 14vw, 200px);
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(50,50,55,0.8);
+  color: #fff;
+  border: 2px solid #1a1a1a;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: rgba(50,50,55,1);
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
+/* Image Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 10001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal.active {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10002;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #ccc;
+}
+
+/* ===========================
+   DONATIONS PAGE STYLES
+   =========================== */
+
+.page-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: clamp(32px, 4.5vw, 64px);
+  margin: 0 0 clamp(15px, 2vw, 25px) 0;
+  color: #0a0a0a;
+  text-align: center;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.donation-text {
+  font-family: 'IM Fell English SC', serif;
+  font-size: clamp(18px, 2.2vw, 32px);
+  max-width: clamp(75%, 80vw, 85%);
+  margin-bottom: clamp(15px, 2vw, 25px);
+  line-height: 1.4;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.qr-chest-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(20px, 3vw, 50px);
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.chest-img {
+  width: clamp(280px, 30vw, 480px);
+  height: clamp(280px, 30vw, 480px);
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.qr-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vw, 25px);
+}
+
+.qr-stack img {
+  width: clamp(150px, 16vw, 240px);
+  height: clamp(150px, 16vw, 240px);
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ===========================
+   RESPONSIVE ADJUSTMENTS
+   =========================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 !important;
+    padding-top: 5px !important;
+  }
+
+  .inner-background {
+    transform: scale(1.05) !important;
+    transform-origin: center center;
+    width: 99.5vw !important;
+    max-width: 99.5vw !important;
+    padding: 8vw 4vw 8vw 4vw !important;
+    background-size: 100% 100%;
+    min-height: auto;
+    gap: 0px;
+  }
+
+  #page-index .summons,
+  #page-index .address-block {
+    margin: 0;
+  }
+
+  .buttons {
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 8px 0 15px 0;
+    width: 95%;
+    max-width: 95%;
+  }
+
+  #page-index .buttons {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  #page-dresscode .buttons {
+    padding-top: 60px;
+  }
+
+  .buttons-secondary {
+    gap: 60px 8px;
+    padding-top: 40px;
+  }
+
+  .btn {
+    font-size: 3.5vw !important;
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 48%;
+    padding: 0.6em 0.3em;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal !important;
+    line-height: 1.2;
+  }
+
+  .btn-secondary {
+    padding-top: 10%;
+  }
+
+
+  .pirate-skull {
+    width: 45%;
+    max-width: 180px;
+    margin: 5px auto 8px;
+    padding-top: 30px;
+  }
+
+  .namescroll {
+    width: 75%;
+    max-width: 380px;
+    margin-bottom: 0;
+  }
+
+  .summons {
+    font-size: clamp(20px, 4vw, 32px);
+    margin: 0 auto 5px;
+    white-space: normal;
+    max-width: 80%;
+  }
+
+  .summons::after {
+    content: "\A";
+    white-space: pre;
+  }
+
+  .address-block {
+    margin: 10px 0;
+  }
+
+  .address {
+    font-size: clamp(20px, 3.5vw, 28px);
+    margin: 0;
+  }
+
+  .invite-images {
+    gap: 25px;
+    margin: 15px 0 0 0;
+  }
+
+  .date-img {
+    width: 32%;
+    max-width: 160px;
+    margin-right: 0;
+    padding-bottom: 50px;
+  }
+
+  .ship-img {
+    width: 42%;
+    max-width: 240px;
+    margin-left: 15px;
+    padding-bottom: 50px;
+  }
+
+  .event-notice-outside {
+    font-size: clamp(18px, 4vw, 28px);
+    margin: 8px 0;
+  }
+
+  .rsvp-box {
+    padding: 18px 15px;
+    max-width: 75%;
+    border-width: 1px;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+
+  .rsvp-box h1 {
+    font-size: clamp(20px, 5vw, 30px);
+    margin-bottom: 10px;
+  }
+
+  .rsvp-box form {
+    gap: 7px;
+  }
+
+  .rsvp-box input,
+  .rsvp-box textarea {
+    font-size: 14px;
+    padding: 9px 11px;
+    border-width: 1px;
+  }
+
+  .rsvp-box textarea {
+    min-height: 50px;
+  }
+
+  .rsvp-box button {
+    font-size: clamp(15px, 2.8vw, 21px);
+    padding: 0.45em 1.1em;
+    margin-top: 5px;
+    border-width: 1px;
+  }
+
+  .carousel-wrapper {
+    max-width: 70%;
+    padding: 0 18px 8px;
+    margin: 8px auto;
+  }
+
+  .carousel-wrapper h3 {
+    font-size: clamp(30px, 5.5vw, 40px);
+    margin: 8px 0 12px;
+  }
+
+  .carousel-track {
+    gap: 8px;
+  }
+
+  .carousel-track img {
+    width: 110px;
+    height: 130px;
+  }
+
+  .page-title {
+    font-size: clamp(26px, 4.5vw, 36px);
+    margin: 0 0 15px 0;
+  }
+
+  .donation-text {
+    font-size: clamp(15px, 3vw, 19px);
+    max-width: 88%;
+    margin-bottom: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .qr-chest-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 40px;
+  }
+
+  .chest-img {
+    width: 200px;
+    height: 200px;
+    padding-bottom: 30px;
+  }
+
+  .qr-stack {
+    gap: 14px;
+    padding-bottom: 0;
+    flex-direction: row;
+    display: flex;
+  }
+
+  .qr-stack img {
+    width: 110px;
+    height: 110px;
+  }
+
+  #page-donations .page-title {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px 8px;
+  }
+
+  .inner-background {
+    padding: 50px 25px 60px 25px;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    gap: 12px;
+  }
+
+  .buttons {
+    gap: 8px;
+    margin: 10px 0;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 80%;
+    max-width: 80%;
+  }
+
+  .btn {
+    font-size: 18px;
+    flex: 1;
+    min-width: 0;
+    padding: 0.5em 0.2em;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pirate-skull {
+    width: 50%;
+    max-width: 160px;
+    margin: 10px auto 8px;
+  }
+
+  .namescroll {
+    width: 80%;
+    max-width: 320px;
+    margin-bottom: 8px;
+  }
+
+  .summons {
+    font-size: clamp(18px, 5vw, 28px);
+    white-space: normal;
+    margin: 6px auto 8px;
+  }
+
+  .address {
+    font-size: clamp(14px, 3.5vw, 20px);
+    margin: 2px 0;
+  }
+
+  .invite-text {
+    margin: 8px 0;
+  }
+
+  .invite-images {
+    gap: 12px;
+    margin: 10px 0 0 0;
+  }
+
+  .date-img {
+    width: 30%;
+    max-width: 140px;
+    margin-right: 0;
+  }
+
+  .ship-img {
+    width: 38%;
+    max-width: 200px;
+    margin-left: 10px;
+  }
+
+  .event-notice-outside {
+    font-size: clamp(16px, 4vw, 24px);
+    margin: 6px 0;
+  }
+
+  .rsvp-box {
+    padding: 12px 10px;
+    max-width: 70%;
+    border-width: 1px;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+
+  .rsvp-box h1 {
+    font-size: clamp(17px, 5vw, 24px);
+    margin-bottom: 7px;
+  }
+
+  .rsvp-box form {
+    gap: 5px;
+  }
+
+  .rsvp-box input,
+  .rsvp-box textarea {
+    font-size: 12px;
+    padding: 7px 9px;
+    border-width: 1px;
+  }
+
+  .rsvp-box textarea {
+    min-height: 40px;
+  }
+
+  .rsvp-box button {
+    font-size: clamp(13px, 3.5vw, 18px);
+    padding: 0.35em 0.9em;
+    margin-top: 3px;
+    border-width: 1px;
+  }
+
+  .carousel-wrapper {
+    max-width: 75%;
+    padding: 0 12px 6px;
+    margin: 6px auto;
+  }
+
+  .carousel-wrapper h3 {
+    font-size: clamp(26px, 5.5vw, 34px);
+    margin: 6px 0 10px;
+  }
+
+  .carousel-track {
+    gap: 6px;
+  }
+
+  .carousel-track img {
+    width: 95px;
+    height: 115px;
+  }
+
+  .page-title {
+    font-size: clamp(22px, 4.5vw, 30px);
+    margin: 0 0 12px 0;
+  }
+
+  .donation-text {
+    font-size: clamp(13px, 3.2vw, 17px);
+    max-width: 92%;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .qr-chest-row {
+    gap: 15px;
+  }
+
+  .chest-img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .qr-stack {
+    gap: 12px;
+  }
+
+  .qr-stack img {
+    width: 105px;
+    height: 105px;
+  }
+
+  .fixed-buttons-container {
+    bottom: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+
+  #questions-btn {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 22px;
+    padding: 0;
+  }
+
+  #music-control-btn {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 22px;
+    padding: 0;
+  }
+}

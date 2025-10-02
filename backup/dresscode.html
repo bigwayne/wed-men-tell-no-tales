@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dress Code</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+<!-- Unified Stylesheet -->
+<link rel="stylesheet" href="wedding-styles.css">
+</head>
+
+<body>
+  <!-- Language Selector Popup -->
+  <div id="language-overlay" class="language-overlay hidden" style="display: none;">
+    <div class="language-popup">
+      <h2>Choose Your Language</h2>
+      <p>Elige Tu Idioma</p>
+      <div class="language-buttons">
+        <button class="language-btn" data-lang="en">English</button>
+        <button class="language-btn" data-lang="es">Español</button>
+      </div>
+    </div>
+  </div>
+  <!-- Background audio -->
+  <audio id="background-audio" loop preload="auto">
+    <source src="assets/itzi.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Background GIF -->
+  <img src="assets/background.gif" class="background-gif" alt="Background GIF">
+
+  <!-- Fixed Circular Buttons -->
+  <div class="fixed-buttons-container">
+    <button id="music-control-btn">♫</button>
+    <a href="mailto:itzi.salty@gmail.com" id="questions-btn">?</a>
+  </div>
+
+  <div class="container">
+    <div class="inner-background">
+      <!-- Buttons -->
+      <div class="buttons">
+        <a href="index.html" class="btn" data-translate="navHome">Home</a>
+        <a href="rsvp.html" class="btn" data-translate="navRsvp">Rsvp</a>
+        <a href="donations.html" class="btn" data-translate="navDonations">Donations</a>
+      </div>
+
+
+
+      <!-- Wear Carousel -->
+      <div class="carousel-wrapper">
+        <h3 data-translate="wearTitle">Wear</h3>
+        <button class="carousel-btn prev" data-target="carousel-wear">&#10094;</button>
+        <button class="carousel-btn next" data-target="carousel-wear">&#10095;</button>
+        <div class="carousel-track" id="carousel-wear">
+          <img src="assets/dresscode/wear/2020-stehkragen-schnuerhemd-mit-aermelschnuerung-natur_6_3b3ce287-d4cb-4fb8-92ae-b3f9f7ee8c77.png">
+          <img src="assets/dresscode/wear/2161c01422afb16f53ca4978570f378e.jpg">
+          <img src="assets/dresscode/wear/6abcdcdbb3aafaa7e5870605d67208bd.png">
+          <img src="assets/dresscode/wear/81KhuH2dVL._UY1000_.jpg">
+          <img src="assets/dresscode/wear/81UIPaqhnJL.png">
+          <img src="assets/dresscode/wear/a077fc7a4702e09edf261fbb66d3544a.png">
+          <img src="assets/dresscode/wear/dressname_too_long.png">
+          <img src="assets/dresscode/wear/pirate-Corset-2.png">
+        </div>
+      </div>
+
+      <!-- Don't Wear Carousel -->
+      <div class="carousel-wrapper">
+        <h3 data-translate="dontWearTitle">Don't Wear</h3>
+        <button class="carousel-btn prev" data-target="carousel-dontwear">&#10094;</button>
+        <button class="carousel-btn next" data-target="carousel-dontwear">&#10095;</button>
+        <div class="carousel-track" id="carousel-dontwear">
+          <img src="assets/dresscode/dontwear/71hHB3qA0NL.png">
+          <img src="assets/dresscode/dontwear/cheap.png">
+          <img src="assets/dresscode/dontwear/hate_stripes.png">
+          <img src="assets/dresscode/dontwear/ml76027-pirate-captain-men-halloween-costumes.png">
+          <img src="assets/dresscode/dontwear/pirate-shirt-mens.png">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="image-modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script src="language.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
