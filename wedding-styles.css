@@ -497,7 +497,7 @@ body, html {
   }
 
   .btn-secondary {
-    border-top: 2em solid transparent;
+    border-top: clamp(40px, 5vw, 100px) solid transparent;
   }
 }
 
@@ -866,7 +866,7 @@ body, html {
   }
 
   .btn-secondary {
-    padding-top: 10%;
+    padding-top: clamp(30px, 10vw, 60px);
   }
 
 
