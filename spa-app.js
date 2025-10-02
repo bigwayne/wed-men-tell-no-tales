@@ -48,6 +48,9 @@
       // Insert new content
       content.appendChild(clone);
 
+      // Force reflow to ensure styles are applied
+      void content.offsetHeight;
+
       // Reinitialize page-specific functionality
       initPageFeatures();
 
